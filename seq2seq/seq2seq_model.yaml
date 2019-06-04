@@ -1,0 +1,19 @@
+input_features:
+    -
+        name: question
+        type: text
+        level: word
+        encoder: rnn
+        cell_type: lstm
+        reduce_output: null
+
+output_features:
+    -
+        name: answer
+        type: text
+        level: word
+        decoder: generator
+        cell_type: lstm
+        attention: bahdanau
+        loss:
+            type: sampled_softmax_cross_entropy

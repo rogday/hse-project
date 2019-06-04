@@ -1,0 +1,16 @@
+input_features:
+    -
+        name: utterance
+        type: text
+        level: word
+        encoder: rnn
+        cell_type: lstm
+        reduce_output: null
+        preprocessing:
+        word_format: space
+
+output_features:
+    -
+        name: slots
+        type: sequence
+        decoder: tagger
